@@ -1,0 +1,42 @@
+---
+pool: 'Default' 
+trigger:
+  - main
+stages: 
+  - stage: build_mac
+    jobs:
+      - job: A
+        steps:
+          - script: echo 1
+          - script: echo 2
+          - script: echo 3
+          - script: echo 4
+          - script: echo 5
+  - stage: build_linux
+    jobs:
+      - job: B
+        steps:
+          - script: echo 6
+          - script: echo 7
+          - script: echo 8
+          - script: echo 9
+          - script: echo 10
+
+  - stage: build_win
+    jobs:
+      - job: C
+        steps:
+          - script: echo 11
+          - script: echo 12
+          - script: echo 13
+          - script: echo 14
+          - script: echo 15
+  - stage: build_unix
+    jobs:
+      - job: D
+        steps:
+          - script: echo 16
+          - script: echo 17
+          - script: echo 18
+          - script: echo 19
+          - script: echo 20

@@ -1,0 +1,12 @@
+---
+pool: 'Default'
+trigger:
+  - main
+jobs:
+  - job: print numbers
+    steps:
+      - script: echo 1
+      - script: echo 2
+      - script: echo 3
+      - script: echo 4
+      - script: echo 5

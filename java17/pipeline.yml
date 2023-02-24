@@ -1,0 +1,9 @@
+---
+pool: 'Default'
+trigger: 
+  - main
+jobs:
+  - job: install_java
+    steps:
+      - script: ansible-playbook -i host ansible.yml
+      

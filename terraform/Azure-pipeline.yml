@@ -1,0 +1,7 @@
+---
+pool: 'Default'
+trigger:
+  - main
+steps:
+  - script: terraform init
+  - script: terraform apply -auto-aprove

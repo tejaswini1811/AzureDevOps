@@ -1,0 +1,21 @@
+---
+- name: spc
+  become: yes
+  hosts: localhost
+  vars:
+  tasks:
+    - name: download spc jar file
+      ansible.builtin.get_url:
+        url: https://spc1811.s3.ap-northeast-2.amazonaws.com/spring-petclinic-2.7.3.jar
+        dest: /tmp
+    - name: copy service to sudo touch /etc/systemd/system/spc.service
+      ansible.builtin.copy:   
+        src: spc.service
+        dest: /etc/systemd/system/spc.service
+        mode: '664'
+    - name: enable and state service
+      ansible.builtin.systemd:
+        name: spc.service
+        enabled: true
+        daemon_reload: true
+        state: started  
